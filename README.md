@@ -23,7 +23,9 @@ conda install numpy scipy matplotlib sympy
 
 
 ## Extended Kalman Filter
-![Alt text](src/images/EKF.svg?raw=true "Extended Kalman Filter")
+![Alt text](src/images/EKF.svg?sanitize=true)
+<img src="src/images/EKF.svg?sanitize=true">
+
 
 ### Explanation of Extended Kalman Filter
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0M8R0IVdLOI/0.jpg)](https://www.youtube.com/watch?v=0M8R0IVdLOI)

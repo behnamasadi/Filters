@@ -1,34 +1,16 @@
-# Filter
+# Laser Assembler
 
-This work contains implementation of Kalman Filter, Extended Kalman Filter and Particle Filter.
+
+This work will assemble 2D laser scans from Gazebo and turned them into PCL point cloud in ROS.
+For this work, first I loaded the RRBot in Gazebo and launched Its joints controller, then I sent a periodic signal to the robot such that the laser scanner mounted on the robot swings.
+In the following, I assembled the incoming laser scans with the transformation from tf and created PCL point cloud.
 
 ## Install the necessary package:
 
 
 ```
-conda create -n Filters python=3
-conda activate Filters
-conda install -c menpo opencv3
-conda install numpy scipy matplotlib sympy
+sudo apt-get install ros-kinetic-laser-assembler ros-kinetic-laser-geometry ros-kinetic-rqt-controller-manager ros-kinetic-ros-controllers ros-kinetic-gazebo-ros ros-kinetic-gazebo-ros-control ros-kinetic-robot-state-publisher ros-kinetic-ros-comm ros-kinetic-gazebo-plugins
 ```
-
-## Kalman Filter
-
-### Explanation of Kalman Filter
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jn8vQSEGmuM/0.jpg)](https://www.youtube.com/watch?v=jn8vQSEGmuM)
-
-
-### Tracking with Kalman Filter
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7ID1BhO4DEU/0.jpg)](https://www.youtube.com/watch?v=7ID1BhO4DEU)
-
-
-
-### Explanation of Extended Kalman Filter
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0M8R0IVdLOI/0.jpg)](https://www.youtube.com/watch?v=0M8R0IVdLOI)
-
-
-
-
 
 
 ## Check out the RRbot Code
@@ -126,16 +108,7 @@ roslaunch  laser_assembler.launch
 ![Alt text](images/laser_assembler_rqt_graph.jpg?raw=true "graph")
 
 
-
-
-### Explanation of Particle Filter
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7Z9fEpJOJdc/0.jpg)](https://www.youtube.com/watch?v=7Z9fEpJOJdc)
-### Demo of The Particle Filter
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/TKCyAz063Yc/0.jpg)](https://www.youtube.com/watch?v=TKCyAz063Yc)
-
-
-
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Cl5XRS78R4Y/0.jpg)](https://www.youtube.com/watch?v=Cl5XRS78R4Y)
 
 ![alt text](https://img.shields.io/badge/license-BSD-blue.svg)
 [![Build Status](https://travis-ci.org/behnamasadi/laser_assembler.svg?branch=master)](https://travis-ci.org/behnamasadi/laser_assembler)

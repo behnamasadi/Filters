@@ -1,6 +1,6 @@
 # Filter
 
-This work contains implementation of Kalman Filter, Extended Kalman Filter and Particle Filter in python.
+This work contains implementation of Kalman Filter, Extended Kalman Filter and Particle Filter in python from scratch.
 
 ## Install the necessary package:
 
@@ -23,13 +23,13 @@ conda install numpy scipy matplotlib sympy
 
 
 ## Extended Kalman Filter
-![Alt text](images/laser_assembler_rqt_graph.jpg?raw=true "graph")
+![Alt text](images/EKF.svg?raw=true "Extended Kalman Filter")
 
 ### Explanation of Extended Kalman Filter
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0M8R0IVdLOI/0.jpg)](https://www.youtube.com/watch?v=0M8R0IVdLOI)
 
 
-##Particle Filter
+## Particle Filter
 
 ### Explanation of Particle Filter
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7Z9fEpJOJdc/0.jpg)](https://www.youtube.com/watch?v=7Z9fEpJOJdc)

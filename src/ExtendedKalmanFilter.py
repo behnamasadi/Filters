@@ -140,7 +140,7 @@ sAccel   = 0.5
 
 Q_t = np.diag([sGPS**2, sGPS**2, sCourse**2, sVelocity**2, sYaw**2, sAccel**2])
 
-path="/home/behnam/Kalman/"
+path="data/"
 datafile = '2014-03-26-000-Data.csv'
 
 fullPath=path+datafile

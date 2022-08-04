@@ -1,6 +1,7 @@
 # Filter
 
-This work contains implementation of Kalman Filter, Extended Kalman Filter and Particle Filter in python from scratch.
+This repository contains the implementation of Kalman Filter, Extended Kalman Filter, and Particle Filter in python from scratch.
+
 
 ## Install the necessary package:
 

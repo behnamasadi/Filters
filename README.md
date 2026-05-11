@@ -8,6 +8,7 @@ inline.
 |---|---|---|
 | Kalman Filter | [src/KalmanFilter.ipynb](src/KalmanFilter.ipynb) | Linear systems, Gaussian noise |
 | Extended Kalman Filter | [src/ExtendedKalmanFilter.ipynb](src/ExtendedKalmanFilter.ipynb) | Nonlinear systems, Gaussian noise |
+| Error-State EKF (VIO) | [src/ErrorStateEKF_VIO.ipynb](src/ErrorStateEKF_VIO.ipynb) | State on a manifold (e.g. rotation), IMU + camera fusion |
 | Particle Filter | [src/ParticleFilter.ipynb](src/ParticleFilter.ipynb) | Nonlinear, non-Gaussian, multi-modal |
 
 ![License](https://img.shields.io/badge/license-BSD-blue.svg)
@@ -71,6 +72,35 @@ the notebook.
 ![EKF state diagram](src/images/EKF.svg)
 
 [![EKF explainer](https://img.youtube.com/vi/0M8R0IVdLOI/0.jpg)](https://www.youtube.com/watch?v=0M8R0IVdLOI)
+
+## Error-State Extended Kalman Filter (VIO)
+
+When the state contains a quantity that lives on a manifold — most
+commonly a rotation in $SO(3)$ — a Gaussian over the full state doesn't
+make sense, because rotations don't add. The error-state EKF splits the
+state in two:
+
+- **Nominal state** $\hat{\mathbf{x}}$ — stored exactly (position,
+  velocity, rotation matrix, IMU biases). Propagated by the full
+  nonlinear IMU integration.
+- **Error state** $\delta\mathbf{x} \in \mathbb{R}^{15}$ — a small
+  additive perturbation around the nominal. Lives in a vector space, so
+  the EKF can track a Gaussian over it.
+
+The Kalman update runs on $\delta\mathbf{x}$ and is then **injected**
+back into the nominal state, using $\hat R \leftarrow \hat R \cdot \mathrm{Exp}(\delta\hat\theta)$
+for the rotation block so it stays on $SO(3)$:
+
+$$\delta\hat{\mathbf{x}} = K \, r, \qquad \hat{\mathbf{x}} \leftarrow \hat{\mathbf{x}} \boxplus \delta\hat{\mathbf{x}}$$
+
+The notebook walks through one complete 15-state ESKF step with full
+numeric values — IMU propagation, monocular-VO measurement, Kalman
+update, manifold injection, and Joseph-form covariance update — and
+verifies every intermediate result against the hand-computed reference.
+It's also where bias estimation falls out automatically: the gyro/accel
+biases are corrected through cross-covariances even though the
+measurement Jacobian has no bias columns.
+→ [open notebook](src/ErrorStateEKF_VIO.ipynb)
 
 ## Particle Filter
 

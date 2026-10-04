@@ -1,5 +1,4 @@
 numpy>=1.24
-scipy>=1.10
 matplotlib>=3.7
 sympy>=1.12
 jupyterlab>=4.0

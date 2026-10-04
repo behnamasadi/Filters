@@ -1,17 +1,46 @@
 # Filters
 
+**CI**  
+[![Notebooks](https://github.com/behnamasadi/Filters/actions/workflows/notebooks.yml/badge.svg?branch=master)](https://github.com/behnamasadi/Filters/actions/workflows/notebooks.yml)
+[![Lint (Ruff)](https://github.com/behnamasadi/Filters/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/behnamasadi/Filters/actions/workflows/lint.yml)
+[![Links](https://github.com/behnamasadi/Filters/actions/workflows/links.yml/badge.svg?branch=master)](https://github.com/behnamasadi/Filters/actions/workflows/links.yml)
+[![CodeQL](https://github.com/behnamasadi/Filters/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/behnamasadi/Filters/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/behnamasadi/Filters/badge)](https://scorecard.dev/viewer/?uri=github.com/behnamasadi/Filters)
+
+**Run**  
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/behnamasadi/Filters/master?urlpath=lab/tree/src)
+[![nbviewer](https://img.shields.io/badge/render-nbviewer-F37626?logo=jupyter&logoColor=white)](https://nbviewer.org/github/behnamasadi/Filters/tree/master/src/)
+
+**Stack**  
+![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.13-3776AB?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-notebooks-F37626?logo=jupyter&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)
+![SymPy](https://img.shields.io/badge/SymPy-3B5526?logo=sympy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+**Repository**  
+[![License](https://img.shields.io/github/license/behnamasadi/Filters)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/behnamasadi/Filters)](https://github.com/behnamasadi/Filters/commits/master)
+[![Commit activity](https://img.shields.io/github/commit-activity/y/behnamasadi/Filters)](https://github.com/behnamasadi/Filters/graphs/commit-activity)
+[![Contributors](https://img.shields.io/github/contributors/behnamasadi/Filters)](https://github.com/behnamasadi/Filters/graphs/contributors)
+[![Issues](https://img.shields.io/github/issues/behnamasadi/Filters)](https://github.com/behnamasadi/Filters/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/behnamasadi/Filters)](https://github.com/behnamasadi/Filters/pulls)
+![Top language](https://img.shields.io/github/languages/top/behnamasadi/Filters)
+![Code size](https://img.shields.io/github/languages/code-size/behnamasadi/Filters)
+[![Stars](https://img.shields.io/github/stars/behnamasadi/Filters?style=social)](https://github.com/behnamasadi/Filters/stargazers)
+[![Forks](https://img.shields.io/github/forks/behnamasadi/Filters?style=social)](https://github.com/behnamasadi/Filters/network/members)
+
 From-scratch implementations of the three classic Bayesian state estimators
 in Python, presented as runnable Jupyter notebooks with the math derived
 inline.
 
-| Filter | Notebook | Use case |
-|---|---|---|
-| Kalman Filter | [src/KalmanFilter.ipynb](src/KalmanFilter.ipynb) | Linear systems, Gaussian noise |
-| Extended Kalman Filter | [src/ExtendedKalmanFilter.ipynb](src/ExtendedKalmanFilter.ipynb) | Nonlinear systems, Gaussian noise |
-| Error-State EKF (VIO) | [src/ErrorStateEKF_VIO.ipynb](src/ErrorStateEKF_VIO.ipynb) | State on a manifold (e.g. rotation), IMU + camera fusion |
-| Particle Filter | [src/ParticleFilter.ipynb](src/ParticleFilter.ipynb) | Nonlinear, non-Gaussian, multi-modal |
-
-![License](https://img.shields.io/badge/license-BSD-blue.svg)
+| Filter | Notebook | Use case | Open |
+|---|---|---|---|
+| Kalman Filter | [src/KalmanFilter.ipynb](src/KalmanFilter.ipynb) | Linear systems, Gaussian noise | [nbviewer](https://nbviewer.org/github/behnamasadi/Filters/blob/master/src/KalmanFilter.ipynb) · [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/behnamasadi/Filters/master?labpath=src/KalmanFilter.ipynb) |
+| Extended Kalman Filter | [src/ExtendedKalmanFilter.ipynb](src/ExtendedKalmanFilter.ipynb) | Nonlinear systems, Gaussian noise | [nbviewer](https://nbviewer.org/github/behnamasadi/Filters/blob/master/src/ExtendedKalmanFilter.ipynb) · [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/behnamasadi/Filters/master?labpath=src/ExtendedKalmanFilter.ipynb) |
+| Error-State EKF (VIO) | [src/ErrorStateEKF_VIO.ipynb](src/ErrorStateEKF_VIO.ipynb) | State on a manifold (e.g. rotation), IMU + camera fusion | [nbviewer](https://nbviewer.org/github/behnamasadi/Filters/blob/master/src/ErrorStateEKF_VIO.ipynb) · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/behnamasadi/Filters/blob/master/src/ErrorStateEKF_VIO.ipynb) |
+| Particle Filter | [src/ParticleFilter.ipynb](src/ParticleFilter.ipynb) | Nonlinear, non-Gaussian, multi-modal | [nbviewer](https://nbviewer.org/github/behnamasadi/Filters/blob/master/src/ParticleFilter.ipynb) · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/behnamasadi/Filters/blob/master/src/ParticleFilter.ipynb) |
 
 ## Install
 
@@ -22,7 +51,7 @@ pip install -r requirements.txt
 jupyter lab src/
 ```
 
-Then open one of the three notebooks listed above.
+Then open one of the notebooks listed above.
 
 ## Kalman Filter
 

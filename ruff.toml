@@ -1,0 +1,4 @@
+# Lint gate for the notebooks (CI: .github/workflows/lint.yml).
+# Only the rules that catch code which cannot run: syntax errors and undefined names.
+[lint]
+select = ["E9", "F63", "F7", "F82"]

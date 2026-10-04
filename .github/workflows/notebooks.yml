@@ -1,0 +1,48 @@
+name: Notebooks
+
+# Every notebook must run top to bottom on a clean install of requirements.txt.
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: "41 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  execute:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install requirements
+        run: pip install -r requirements.txt nbclient ipykernel
+
+      - name: Execute notebooks
+        working-directory: src
+        run: |
+          for nb in *.ipynb; do
+            echo "::group::$nb"
+            jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 \
+              --output-dir "$RUNNER_TEMP/executed" "$nb"
+            echo "::endgroup::"
+          done

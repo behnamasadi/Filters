@@ -1,5 +1,7 @@
 name: CodeQL
 
+# Workflows only: CodeQL does not analyse .ipynb and the repo has no .py files.
+
 on:
   push:
     branches: [master]
@@ -24,8 +26,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: python
-            build-mode: none
           - language: actions
             build-mode: none
 

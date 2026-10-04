@@ -1,18 +1,7 @@
-bin/*
-conda-meta/*
-etc/*
-libexec/*
-plugins/*
-share/*
-ssl/*
-var/*
-compiler_compat/*
-doc/*
-include/*
-lib/*
-mkspecs/*
-phrasebooks/*
-qml/*
-resources/*
-translations/*
-x86_64-conda_cos6-linux-gnu/*
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.virtual_documents/
+.venv/
+venv/
